@@ -1,4 +1,4 @@
-// package Day23;
+// package Day23;   => iske waje se error aara hai koi farak nhi parta usse
 
 import java.util.Stack;
 
