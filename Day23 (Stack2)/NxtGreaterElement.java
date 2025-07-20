@@ -2,7 +2,7 @@
 javac Day23\NxtGreaterElement.java
 java Day23.NxtGreaterElement*/
 
-package Day23;
+// package Day23;
 import java.util.*;
 
 public class NxtGreaterElement {
@@ -13,7 +13,7 @@ public class NxtGreaterElement {
 
         for (int i = arr.length - 1; i >= 0; i--) {
             // Pop indices whose values are <= current value
-            while (!s.isEmpty() && arr[s.peek()] <= arr[i]) {
+            while (!s.isEmpty() && arr[s.peek()] <= arr[i]) {  // saare choti val ko nikal de rahe hai
                 s.pop();
             }
             // Record answer

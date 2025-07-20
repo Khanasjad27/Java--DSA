@@ -3,7 +3,7 @@ javac Day23\ValidParantheses.java
 java Day23.ValidParantheses
 */
 
-package Day23;
+// package Day23;
 
 import java.util.Stack;
 
