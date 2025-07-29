@@ -2,8 +2,20 @@ import java.util.*;
 
 public class ActivitySelection{
     public static void main(String[] args) {
+
         int start[] = {1,3,0,5,8,5};
         int end [] = {2,4,6,7,9,9};
+        
+
+        // Sorting
+        int activities[][] = new int [start.length][3]; // yaha 2nd waale me 3 aaya coz 3 row banae hai
+        for(int i=0;i<start.length;i++){
+            activities[i][0] = i; // index store
+            activities[i][1] = start[i];
+            activities[i][2] = end[i];
+        }
+        // Comparator.comparingDouble(o -> o[2]) is lamda fn  -> shortform for sorting
+        Arrays.sort(activities, Comparator.comparingDouble(o -> o[2]));   // 2 ka matlab hai hame sorting column no. 2 ke hisab se karni hai
         
         // Now Answer
         int ActCount = 0;
