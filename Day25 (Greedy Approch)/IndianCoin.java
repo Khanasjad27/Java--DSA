@@ -3,7 +3,7 @@ import java.util.*;
 public class IndianCoin {
     public static void main(String[] args) {
         Integer coins[] = {1,2,5,10,20,50,100,500,2000};
-        int value = 590;
+        int value = 1569;
 
         Arrays.sort(coins, Comparator.reverseOrder());
 
