@@ -14,7 +14,7 @@ public class DeleteNNodeAfterMNodeLL {
     public static Node tail;
     public static int size;
 
-    // Add node at the beginning
+    // Add node at the beginning 
     public void addFirst(int data) {
         Node newNode = new Node(data);
         size++;
