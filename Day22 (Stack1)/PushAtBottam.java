@@ -1,6 +1,4 @@
 import java.util.*;
-
-
 public class PushAtBottam {
     public static void AtBottom(Stack <Integer> s,int data){
         if(s.isEmpty()){

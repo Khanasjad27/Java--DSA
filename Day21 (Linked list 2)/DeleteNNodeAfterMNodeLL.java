@@ -1,6 +1,6 @@
 public class DeleteNNodeAfterMNodeLL {
 
-    // Node class .
+    // Node class
     public static class Node {
         int data;
         Node next;
