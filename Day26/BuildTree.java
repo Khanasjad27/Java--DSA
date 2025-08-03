@@ -52,7 +52,15 @@ public class BuildTree {
         }
 
         // postOrder
-        pub
+        public static void postOrder(Node root){
+            if(root == null){
+                return ;
+            }
+
+            postOrder(root.left);
+            postOrder(root.right);
+            System.out.print(root.data+" "); 
+        }
     }
     public static void main(String[] args) {
         int nodes[] = {1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
@@ -68,5 +76,9 @@ public class BuildTree {
         // Inorder
         System.out.print("InOder: ");
         tree.Inorder(root);
+        System.out.println();
+        // Inorder
+        System.out.print("PostOrder: ");
+        tree.postOrder(root);
     }
 }
