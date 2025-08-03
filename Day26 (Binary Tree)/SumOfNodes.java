@@ -1,5 +1,4 @@
-import java.util.*;
-public class CountOfNodes {
+public class SumOfNodes {
     static class Node{
         int data;
         Node left, right;
@@ -11,14 +10,14 @@ public class CountOfNodes {
         }
     }
 
-    public static int nodeCount(Node root){
+    public static int sumNode(Node root){
         if(root == null){
             return 0;
         }
-        int lc = nodeCount(root.left);
-        int rc = nodeCount(root.right);
+        int ls = sumNode(root.left);
+        int rs = sumNode(root.right);
 
-        return lc+rc+1;
+        return ls+rs+root.data;
     }
     public static void main(String[] args) {
         Node root = new Node(1);
@@ -29,6 +28,6 @@ public class CountOfNodes {
         root.right.left = new Node(6);
         root.right.right = new Node(7);
 
-        System.out.println(nodeCount(root));
+        System.out.println("The sum of all Node is "+sumNode(root));
     }
 }
