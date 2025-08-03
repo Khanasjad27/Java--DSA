@@ -39,8 +39,21 @@ public class BuildTree {
             preOrder(root.left);
             preOrder(root.right);
         }
-    }
 
+        // Inorder
+        public static void Inorder(Node root){
+            if(root == null){
+                return ;
+            }
+
+            Inorder(root.left);
+            System.out.print(root.data+" ");
+            Inorder(root.right);
+        }
+
+        // postOrder
+        pub
+    }
     public static void main(String[] args) {
         int nodes[] = {1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
         BinaryTree tree = new BinaryTree();
@@ -49,6 +62,11 @@ public class BuildTree {
         // System.out.println(root.data);
 
         // preOrder
+        System.out.print("PreOder: ");
         tree.preOrder(root);
+        System.out.println();
+        // Inorder
+        System.out.print("InOder: ");
+        tree.Inorder(root);
     }
 }
