@@ -1,4 +1,4 @@
-// package Day21 (Linked list 2);
+
 
 import java.util.*;
 import java.util.LinkedList;
