@@ -45,6 +45,20 @@ public class KthLevelOfTree {
             }
         }
     }
+
+    // Approch 2
+    public static void Klevel(Node root,int level, int k){
+        if(root == null){
+            return;
+        }
+
+        if(level == k){
+            System.out.print(root.data+" ");
+            return;
+        }
+        Klevel(root.left, level+1, k);
+        Klevel(root.right, level+1, k);
+    }
     public static void main(String[] args) {
         /*
                     1
@@ -60,7 +74,11 @@ public class KthLevelOfTree {
         root.right = new Node(3);
         root.right.left = new Node(6);
         root.right.right = new Node(7);
-        System.out.print("Nodes at kth level are: ");
+
+        // Approch 1
         kthLevel1(root, 3);
+
+        // Approch 2
+        Klevel(root, 1, 2);
     }
 }
