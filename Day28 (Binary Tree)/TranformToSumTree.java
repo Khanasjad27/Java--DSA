@@ -11,8 +11,34 @@ public class TranformToSumTree {
         }
     }
 
+    public static int sum(Node root){
+        if(root==null){
+            return 0;
+        }
+
+        int leftchild = sum(root.left);
+        int rightchild = sum(root.right);
+        int data = root.data;
+
+        int newleft = root.left == null ? 0 : root.left.data;
+        int newright = root.right == null ? 0 : root.right.data;
+        /* root.data = leftchild + root.left.data + rightchild + root.right.data;
+         * ya nhi likh rahe hai coz ek error aara hai i.e root.left.data null hojara hai isliya upar waal likhe hai same for right
+         */
+        
+        root.data = leftchild + newleft + rightchild + newright;
+        return data;
+    }
     
-    
+    public static void preOrder(Node root){
+        if(root == null){
+            return;
+        }
+
+        System.out.print(root.data+" ");
+        preOrder(root.left);
+        preOrder(root.right);
+    }
     public static void main(String[] args) {
          /*
                     1
@@ -29,7 +55,8 @@ public class TranformToSumTree {
         root.right.left = new Node(6);
         root.right.right = new Node(7);
 
-        int n1 = 4, n2 = 5;
+        sum(root);
+        preOrder(root);
 
     }
 }
