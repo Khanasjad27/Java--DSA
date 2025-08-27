@@ -40,6 +40,15 @@ public class ValidBST2 {
         Inorder(root.right);
     }
 
+    public static boolean isBST(Node root, Node min, Node max){
+        if(root == null) return true;
+
+        if(min!=null && root.data<=min.data) return false;
+
+        if(max!=null && root.data>=max.data) return false;
+
+        return isBST(root.left, min, root) && isBST(root.right, root, max);
+    }
     public static void main(String[] args) {
         int val[] = {8,5,3,1,4,6,10,11,14};
         Node root = null;
@@ -49,6 +58,8 @@ public class ValidBST2 {
         }
 
         Inorder(root);
+        System.out.println();
+        System.out.println(isBST(root, null, null));
     }
 
 }
