@@ -1,6 +1,5 @@
-import java.util.*;
-public class ValidBST2 {
- 
+public class MirrorTree {
+
     static class Node{
         int data;
         Node left;
@@ -40,14 +39,19 @@ public class ValidBST2 {
         Inorder(root.right);
     }
 
-    public static boolean isBST(Node root, Node min, Node max){
-        if(root == null) return true;
 
-        if(min!=null && root.data<=min.data) return false;
+    public static Node mirror(Node root){
+        if(root == null){
+            return null;
+        }
 
-        if(max!=null && root.data>=max.data) return false;
+        Node leftS = mirror(root.left);
+        Node RightS = mirror(root.right);
 
-        return isBST(root.left, min, root) && isBST(root.right, root, max);
+        root.left = RightS;
+        root.right = leftS;
+
+        return root;
     }
     public static void main(String[] args) {
         int val[] = {8,5,3,1,4,6,10,11,14};
@@ -59,7 +63,8 @@ public class ValidBST2 {
 
         Inorder(root);
         System.out.println();
-        System.out.println(isBST(root, null, null));
+        mirror(root);
+        Inorder(root);
     }
 
 }
